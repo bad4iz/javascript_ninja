@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Suite</title>
+    <script>
+        // определить метод assert
+        function assert( value, desc ) {
+            var li = document.createElement("li");
+            li.className = value ? "pass" : "fail";
+            li.appendChild( document.createTextNode( desc ));
+            document.getElementById("results").appendChild(li);
+        }
+//         выполнение тестов мспользуя утверждения
+        window.onload = function(){
+            assert( true, "тест сюите пройден");
+            assert(false, "Ошибка");
+        }
+    </script>
+
+    <style>
+        /*// задаем стили оформления результатов*/
+        #results li.pass { color: green;}
+        #results li.fail { color: red;}
+    </style>
+</head>
+<body>
+<!-- сохранить результаты-->
+<ul id="results"></ul>
+</body>
+</html>
